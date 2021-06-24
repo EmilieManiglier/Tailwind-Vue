@@ -1,0 +1,14 @@
+/**
+ @layer: Define which group the following set of custom styles belong to
+ Wrapping any custom style in a @layer directive tells Tailwind to consider those styles when purging that layer
+ */
+ @layer base {
+  .h2 {
+    @apply relative text-4xl text-text font-bold mb-4;
+
+    &::after {
+      @apply absolute right-0 left-0 -bottom-1 bg-text h-0.5;
+      content: '';
+    }
+  }
+}

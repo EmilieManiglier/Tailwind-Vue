@@ -1,4 +1,4 @@
-# tailwind-vue-app
+# tailwind-vue
 
 ## Project setup
 ```

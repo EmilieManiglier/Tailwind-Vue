@@ -1,0 +1,29 @@
+@layer components {
+  .btn-primary {
+    @apply bg-text hover:bg-legend text-white py-2 px-4 m-3 rounded w-fit;
+  }
+  
+  .label-seaserpent {
+    @apply bg-seaserpent-light text-text uppercase p-2 mr-1 text-sm font-medium rounded;
+  }
+  
+  .label-canary {
+    @apply bg-canary-light text-text uppercase p-2 mr-1 text-sm font-medium rounded;
+  }
+  
+  .label-woodpecker {
+    @apply bg-woodpecker-light text-text uppercase p-2 mr-1 text-sm font-medium rounded;
+  }
+  
+  .icon {
+    @apply bg-text text-white rounded-full w-10 h-10 m-2 flex justify-center items-center;
+  }
+
+  .icon-white {
+    @apply bg-white text-text rounded-full w-10 h-10 m-2 flex justify-center items-center border-2 border-text;
+  }
+
+  .icon-borderless {
+    @apply bg-white text-text w-10 h-10 m-2 flex justify-center items-center;
+  }
+}
