@@ -1,6 +1,10 @@
 @layer components {
   .btn-primary {
-    @apply bg-text hover:bg-legend text-white py-2 px-4 m-3 rounded w-fit;
+    @apply bg-text text-white border border-text py-2 px-4 m-3 rounded w-fit transition-colors duration-300 hover:bg-white hover:text-text;
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-text border border-text py-2 px-4 m-3 rounded w-fit transition-colors duration-300 hover:bg-text hover:text-white;
   }
   
   .label-seaserpent {
@@ -16,14 +20,14 @@
   }
   
   .icon {
-    @apply bg-text text-white rounded-full w-10 h-10 m-2 flex justify-center items-center;
+    @apply bg-text text-white rounded-full w-10 h-10 m-2 flex justify-center items-center cursor-pointer;
   }
 
   .icon-white {
-    @apply bg-white text-text rounded-full w-10 h-10 m-2 flex justify-center items-center border-2 border-text;
+    @apply bg-white text-text rounded-full w-10 h-10 m-2 flex justify-center items-center border-2 border-text cursor-pointer;
   }
 
   .icon-borderless {
-    @apply bg-white text-text w-10 h-10 m-2 flex justify-center items-center;
+    @apply bg-white text-text w-10 h-10 m-2 flex justify-center items-center cursor-pointer;
   }
 }

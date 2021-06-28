@@ -1,14 +1,18 @@
 <template>
-  <div class="input-wrapper">
+  <div class="relative mb-5 floating-input">
     <input
       :type="type"
-      :name="name"
       :id="name"
-      :placeholder="placeholder"
-      :disabled="disabled"
-      class="input"
+      :placeholder="name"
+      :disabled="isDisabled"
+      :readonly="isReadOnly"
+      :class="{ disabled: isDisabled || isReadOnly }"
+      class="w-full h-16 p-3 border rounded-md border-legend focus:outline-none focus:shadow-focus"
+      autocomplete="on"
     />
-    <label :for="name" class="label">{{ name }}</label>
+    <label :for="name" class="label" :class="{ 'text-legend': isDisabled || isReadOnly }">
+      {{ name }}
+    </label>
   </div>
 </template>
 
@@ -28,7 +32,11 @@ export default {
       type: String,
       default: ''
     },
-    disabled: {
+    isDisabled: {
+      type: Boolean,
+      default: false
+    },
+    isReadOnly: {
       type: Boolean,
       default: false
     }
@@ -37,35 +45,38 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.input-wrapper {
-  @apply 
-    relative 
-    border-legend 
-    h-14 
-    w-full 
-    rounded-md
-    border
-    my-5
-    overflow-hidden
-    focus-within:shadow-focus
-    focus:border-text;
-
+input {
   &.disabled {
-    @apply bg-legend;
+    @apply border-0 bg-lightGrey;
+  }
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:focus,
+  &:not(:placeholder-shown) {
+    @apply pt-8;
+
+    & ~ .label {
+      @apply opacity-75 scale-75 -translate-y-3 translate-x-1;
+    }
   }
 }
 
 .label {
-  @apply absolute top-1/2 transform -translate-y-1/2 duration-300 origin-0 text-legend capitalize;
+  @apply absolute 
+  top-0 
+  left-0 
+  h-full 
+  px-3 
+  py-5 
+  capitalize 
+  transition-all 
+  duration-100 
+  ease-in-out 
+  origin-left 
+  transform 
+  pointer-events-none;
 }
-
-.input {
-  @apply block w-full h-full appearance-none focus-within:outline-none  py-2 px-3;
-
-  &:focus-within ~ .label,
-  &:not(:placeholder-shown) ~ .label {
-    @apply transform scale-75 -translate-y-6 text-legend;
-  }
-}
-
 </style>

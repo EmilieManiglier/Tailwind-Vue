@@ -1,11 +1,11 @@
 <template>
-  <div class="grid grid-cols-3 gap-4 h-full">
-    <div class="border-4 border-dashed border-seaserpent-light p-4">
+  <div class="grid h-full grid-cols-3 gap-4">
+    <div class="p-4 border-4 border-dashed border-seaserpent-light">
       <h2 class="h2">Boutons et Icônes</h2>
       <div class="flex flex-col">
-        <button type="button" class="btn-primary">Connexion</button>
         <button type="button" class="btn-primary">Nouvelle demande</button>
         <button type="button" class="btn-primary">Gérer mes jours posés</button>
+        <button type="button" class="btn-secondary">Connexion</button>
       </div>
 
       <div class="flex flex-wrap">
@@ -21,23 +21,23 @@
       </div>
     </div>
 
-    <div class="border-4 border-dashed border-woodpecker-light p-4">
+    <div class="p-4 border-4 border-dashed border-woodpecker-light">
       <h2 class="h2">Form</h2>
       <form class="mt-8">
         <Input type="email" name="email" />
         <Input type="password" name="password" />
-        <Input type="text" name="name" :disabled="true" />
+        <Input type="text" name="lastname" :isDisabled="true" />
+        <Input type="text" name="firstname" :isReadOnly="true" />
       </form>
     </div>
 
-    <div class="border-4 border-dashed border-canary-light p-4">
+    <div class="p-4 border-4 border-dashed border-canary-light">
       <h2 class="h2">Cards</h2>
       <Card
         picture="https://picsum.photos/600/400/?image=25"
         name="Emilie Maniglier"
         jobPosition="Développeuse Front-End"
-        type="Congés"
-      />
+        type="Congés" />
       <Card
         picture="https://picsum.photos/600/400/?image=45"
         name="François Loupias"
